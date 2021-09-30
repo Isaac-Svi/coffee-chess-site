@@ -4,7 +4,6 @@ import PublicRoute from './components/PublicRoute'
 import PrivateRoute from './components/PrivateRoute'
 import HomePage from './pages/HomePage'
 import RegisterPage from './pages/RegisterPage'
-import ChessPage from './pages/ChessPage'
 import ErrorHandler from './components/ErrorHandler'
 import GamePage from './pages/GamePage'
 
@@ -19,12 +18,6 @@ const Routes = () => {
                     exact
                     component={RegisterPage}
                 />
-                {/* <PrivateRoute
-                    path='/chess'
-                    redirect='/'
-                    exact
-                    component={ChessPage}
-                /> */}
                 <PrivateRoute
                     path='/game/:gameId'
                     redirect='/'

@@ -18,9 +18,11 @@ const GameConfigModal = ({ close }) => {
         const challenge = {
             challenger_side: side,
             challenger_username: user.userInfo.username,
-            minutes,
-            seconds,
+            minutes: Number(minutes),
+            seconds: Number(seconds),
         }
+
+        console.log(challenge)
 
         secureSocket.emit('create challenge', challenge)
     }

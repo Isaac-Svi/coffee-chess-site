@@ -5,6 +5,8 @@ import { useChess } from './ChessBoard'
 import formatTime from '../utils/formatTime'
 import '../styles/Timer.css'
 
+let started = false
+
 const Timer = ({ tracker, id }) => {
     const { currentSide } = useChess()
     const { timeLeft, start, pause } = useTimer(tracker.time)
@@ -25,9 +27,14 @@ const Timer = ({ tracker, id }) => {
         }
     }, [secureSocket])
 
-    useEffect(() => {
-        secureSocket.emit('tick', currentSide, (time) => {})
-    }, [timeLeft])
+    // useEffect(() => {
+    //     if (timeLeft && !started) {
+    //         start()
+    //         started = true
+    //     }
+
+    //     secureSocket.emit('tick', currentSide, (time) => {})
+    // }, [timeLeft, start, tracker.time])
 
     return (
         <div id={id} className='timer'>

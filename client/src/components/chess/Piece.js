@@ -40,10 +40,8 @@ export default class Piece extends Component {
     makeMove = () => {
         const hoveredSquareId = hoveredSquare.id
 
-        console.log(hoveredSquare)
-
-        hoveredSquare.innerHTML = ''
-        hoveredSquare.append(this.$el)
+        // hoveredSquare.innerHTML = ''
+        // hoveredSquare.append(this.$el)
 
         this.square = hoveredSquareId
     }

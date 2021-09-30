@@ -134,19 +134,21 @@ const GameLobby = ({ name }) => {
                                 {!user.socketToken ? null : user.userInfo
                                       .username === challenger_username ? (
                                     <button
+                                        title='Withdraw challenge'
                                         onClick={() =>
                                             removeChallenge(challenge_id)
                                         }
                                     >
-                                        Remove challenge
+                                        <i className='fas fa-trash'></i>
                                     </button>
                                 ) : (
                                     <button
+                                        title='Accept challenge'
                                         onClick={() =>
                                             acceptChallenge(challenge)
                                         }
                                     >
-                                        Accept challenge
+                                        <i className='fas fa-check'></i>
                                     </button>
                                 )}
                             </div>

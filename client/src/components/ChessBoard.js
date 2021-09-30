@@ -31,8 +31,9 @@ const ChessBoardProvider = ({ children, gameId }) => {
     })
 
     useEffect(() => {
-        if (secureSocket) {
+        if (secureSocket && (!tracker.time || !opponentTracker.time)) {
             secureSocket.emit('get game info', Number(gameId), (game) => {
+                console.log(game)
                 let side =
                     user.userInfo.username === game.white_username ? 'W' : 'B'
 
@@ -67,6 +68,8 @@ const ChessBoardProvider = ({ children, gameId }) => {
         setOpponentTracker,
         setTracker,
         user.userInfo.username,
+        tracker.time,
+        opponentTracker.time,
     ])
 
     const value = {
@@ -87,13 +90,6 @@ const ChessBoardProvider = ({ children, gameId }) => {
         </ChessBoardContext.Provider>
     )
 }
-
-// class Piece {
-//     constructor(type, color) {
-//         this.type = type
-//         this.color = color
-//     }
-// }
 
 const board = [
     [
@@ -157,9 +153,6 @@ const ChessBoard = () => {
                                 const id = colMap[i] + (s + 1)
                                 return (
                                     <Square key={id} _id={id}>
-                                        {/* <i
-                                            className={`piece fas fa-chess-${piece.type} ${piece.color}`}
-                                        ></i> */}
                                         <Piece
                                             type={piece.type}
                                             color={piece.color}
