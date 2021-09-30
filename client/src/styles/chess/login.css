@@ -1,0 +1,36 @@
+.login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 300px;
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.login > *:not(h2) {
+    flex: 1;
+}
+
+.login h2 {
+    margin-bottom: 10px;
+}
+
+.login input {
+    max-height: 50px;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    outline: none;
+}
+
+.login button {
+    margin-top: 30px;
+    max-height: 50px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}

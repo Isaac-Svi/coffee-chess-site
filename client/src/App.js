@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import Nav from './components/Nav'
+import AuthProvider from './providers/AuthProvider'
+import SocketProvider from './providers/SocketProvider'
+import Routes from './Routes'
 
 const App = () => {
-    const [output, setOutput] = useState('')
-
-    useEffect(() => {
-        fetch('/test')
-            .then((res) => res.text())
-            .then((data) => setOutput(data))
-            .catch((err) => console.log(err.message))
-    }, [])
-
-    return <div className='App'>{output}</div>
+    return (
+        <AuthProvider>
+            <SocketProvider>
+                <Nav />
+                <Routes />
+            </SocketProvider>
+        </AuthProvider>
+    )
 }
 
 export default App

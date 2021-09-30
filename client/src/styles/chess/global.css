@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+    box-sizing: border-box;
+}
+:root {
+    --square-light: white;
+    --square-dark: #444;
+    --piece-light: white;
+    --piece-dark: #222;
+}
+.error {
+    display: none;
+    max-height: 40px;
+    background-color: lightcoral;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+.error.show {
+    display: flex;
+}
+a[disabled] {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+a[disabled]:hover {
+    background-color: white;
+    pointer-events: none;
+}

@@ -1,0 +1,19 @@
+.scroll-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-200vw);
+    width: 200%;
+    height: 100%;
+    background-color: var(--clr-bg-2);
+    animation: scroll-overlay-slide-in 3s ease-in-out forwards;
+    z-index: 3;
+}
+@keyframes scroll-overlay-slide-in {
+    10% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(200vw);
+    }
+}

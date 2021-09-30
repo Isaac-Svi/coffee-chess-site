@@ -1,0 +1,37 @@
+.register-form {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 270px;
+
+    border-radius: 10px;
+    padding: 1em 2em;
+    box-shadow: var(--shadow-1);
+
+    display: flex;
+    flex-direction: column;
+}
+.register-form > *:not(h2) {
+    font-size: 0.8em;
+    margin-bottom: 1em;
+}
+.register-form input {
+    background: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    border-bottom: 0.2px solid #777;
+}
+.register-form input:focus {
+    border-bottom: 1px solid white;
+}
+.register-form button {
+    margin-bottom: 2em;
+}
+@media only screen and (max-width: 500px) {
+    .register-form {
+        box-shadow: unset;
+    }
+}

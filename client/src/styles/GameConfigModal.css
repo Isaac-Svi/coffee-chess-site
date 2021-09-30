@@ -1,0 +1,14 @@
+.game-config-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.game-config-form > *:not(button) {
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+.game-config-form input,
+.game-config-form select {
+    padding: 3px;
+}

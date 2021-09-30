@@ -1,0 +1,134 @@
+.lobby {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid lightgray;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.actions {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.actions button {
+    margin-top: 20px;
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.game {
+    border-bottom: 0.1px solid lightgray;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lobby[data-disabled] {
+    cursor: not-allowed;
+    background-color: white;
+}
+
+.lobby[data-disabled] .game {
+    pointer-events: none;
+}
+
+.game:hover {
+    background-color: lightgray;
+}
+
+.modal {
+    position: relative;
+}
+
+.modal form {
+    position: fixed;
+    top: -100vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.modal.active form {
+    pointer-events: all;
+    top: 50%;
+}
+
+.modal form > *:not(label, button) {
+    border: 1px solid;
+    padding: 5px 10px;
+}
+
+.modal form button {
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.modal.active .overlay {
+    pointer-events: all;
+    background-color: rgb(0 0 0 / 80%);
+}
+
+.closer {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+}
+.closer::before,
+.closer::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    height: 15px;
+    width: 2px;
+    background-color: white;
+}
+.closer::before {
+    transform: rotate(45deg);
+}
+.closer::after {
+    transform: rotate(-45deg);
+}

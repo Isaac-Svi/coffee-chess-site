@@ -1,0 +1,49 @@
+.login-modal {
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-1em, -2em);
+    border-radius: 5px;
+    box-shadow: var(--shadow-1);
+    padding: 1em;
+    transition: opacity 0.3s, transform 0.3s;
+    background-color: var(--clr-bg-1);
+    min-width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.login-modal > * {
+    font-size: 0.8em;
+}
+.fade-in-up {
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-1em, -2em);
+}
+.fade-in-down {
+    pointer-events: all;
+    opacity: 1;
+    transform: translate(-1em, 0.7em);
+}
+
+.login-modal input {
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 0.1px solid #555;
+    color: white;
+}
+
+.login-modal p a {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 500px) {
+    .login-modal {
+        position: fixed;
+        min-width: 80vw;
+    }
+}

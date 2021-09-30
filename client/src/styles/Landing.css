@@ -1,0 +1,23 @@
+.landing {
+    min-height: 60vh;
+    display: grid;
+    place-items: center;
+}
+.landing > * {
+    font-family: 'Segoe UI', monospace;
+    opacity: 0;
+}
+.landing h1 {
+    font-size: 2.4em;
+    text-align: center;
+    padding: 1em;
+    animation: slide-up 2s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes slide-up {
+    to {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+}

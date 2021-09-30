@@ -1,0 +1,26 @@
+.game-lobby {
+    position: relative;
+    margin: 3rem auto 0;
+    opacity: 0;
+    transform: translateY(3rem);
+    width: clamp(300px, 50vw, 500px);
+    min-height: 400px;
+    box-shadow: var(--shadow-1);
+    border-radius: 10px;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+}
+.lobby-header {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(3rem);
+}
+.game-lobby .challenge {
+    background-color: blue;
+    font-size: 0.8em;
+
+    display: flex;
+    flex-direction: row;
+}

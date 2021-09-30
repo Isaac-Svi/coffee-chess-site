@@ -1,0 +1,54 @@
+.scroll-arrow-container {
+    position: relative;
+    display: block;
+    margin: 2em auto;
+    border: 1px solid #777;
+    border-radius: 20px;
+    padding: 0.8em 0.3em 1.2em;
+    width: 6px;
+    height: 50px;
+    cursor: pointer;
+}
+.scroll-arrow {
+    position: relative;
+    width: 6px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    animation: arrow-slide-down 2s ease infinite;
+}
+.scroll-arrow div {
+    position: absolute;
+    min-width: 2px;
+    background: #777;
+}
+.scroll-arrow :nth-child(1) {
+    height: 40px;
+}
+.scroll-arrow :nth-child(2),
+.scroll-arrow :nth-child(3) {
+    height: 10px;
+}
+.scroll-arrow :nth-child(2) {
+    transform: rotate(35deg) translateX(0.175em);
+}
+.scroll-arrow :nth-child(3) {
+    transform: rotate(-35deg) translateX(-0.175em);
+}
+
+@keyframes arrow-slide-down {
+    0% {
+        transform: translateY(-1em);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    90% {
+        transform: translateY(0.7em);
+    }
+    100% {
+        opacity: 0;
+    }
+}

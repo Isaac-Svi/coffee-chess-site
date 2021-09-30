@@ -1,0 +1,30 @@
+.register {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 300px;
+    height: 350px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.register > * {
+    flex: 1;
+}
+
+.register input {
+    border: none;
+    border-bottom: 1px solid lightgray;
+    outline: none;
+}
+
+.register button {
+    position: relative;
+    top: 30px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
